@@ -18,20 +18,20 @@
   crossorigin="anonymous"></script>
     <script type="text/javascript">
        function abc(){
-        alert();
-                $.ajax({
-                  url:'https://api.apispreadsheets.com/data/s5l15DJbY4YxNgU1/',
-                  headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
-                  type:'post',
-                  data:$("#myForm").serializeArray(),
-                  success: function(){
-                    alert("Form Data Submitted :)")
-                  },
-                  error: function(){
-                    alert("There was an error :(")
-                  }
-              });
-             }
+        // alert();
+        //         $.ajax({
+        //           url:'https://api.apispreadsheets.com/data/s5l15DJbY4YxNgU1/',
+        //           headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
+        //           type:'post',
+        //           data:$("#myForm").serializeArray(),
+        //           success: function(){
+        //             alert("Form Data Submitted :)")
+        //           },
+        //           error: function(){
+        //             alert("There was an error :(")
+        //           }
+        //       });
+        //      }
 
     </script>
     </head>
@@ -48,7 +48,11 @@
           <span class="counter-item">4</span>
 </div>   
         <!--  -->
-      <form id="myForm">
+
+
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none"}></iframe>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdjzNtzA6VnH03gPig4RXcigfy6BpkRVYMhPV3aqZXF4Q8VMQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true">
         <div id="outerContainer">
             <div id="innerContainer" class="container">
                 <div class="row" style="align-items: center;">
@@ -62,14 +66,15 @@
                     </h1>
                 </div>
                 <div class="my-4">
-                <textarea type=""  id="txtInput" placeHolder="Enter your name" class="text-input_ " name="inp" >I Love you &nbsp;</textarea>
+                <textarea type="text"  id="txtInput" placeHolder="Enter your name" class="text-input_ "  name="entry.1144169949"  >I Love you &nbsp;</textarea>
                 <br />
                 <select id="voice" class="select_">
                     <option value="1" data-image="#opt-1">For Girls</option>
                     <option value="2" data-image="#opt-2">For Boys</option>
                 </select>
                 <br />
-                <a type="button" value="Say it" id="sayitBtn" class="btn"  href="#pics" onClick="abc()">Sayit</a>
+             <!--    <a  type="submit" value="Submit" id="sayitBtn" class=""  href="#pics" >Sayit</a> -->
+                <input type="submit" value="Say it" id="sayitBtn"   class="btn" onClick="fbt()">
                 </div>
               <!--   <input type="button" value="Say it" id="sayitBtn" class="btn" href="#pics"></input> -->
                     </div>
@@ -119,6 +124,16 @@
     localStorage.setItem("on_load_counter", n);
 
     document.getElementById('CounterVisitor').innerHTML = n;
+
+
+
+    $(".btn").click(function() {
+
+    $('html,body').animate({
+
+        scrollTop: $("#pics").offset().top},
+        'slow');
+});
 
         </script>
     </body>
